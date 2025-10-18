@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+$cor-fundo: #F9F5F0;
+$cor-primaria: #F4991A;
+$cor-secundaria: #344F1F;
+$accent: #F2EAD3;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    background: $cor-fundo;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    color: $cor-secundaria;
+}
