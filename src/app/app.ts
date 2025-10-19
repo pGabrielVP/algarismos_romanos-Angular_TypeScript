@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { VALID_ALGARISMS_REGEX } from './constants/roman_decimal';
 import { Converter } from './services/converter';
@@ -9,7 +9,7 @@ import { Converter } from './services/converter';
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {
+export class App implements OnInit {
   private converter = inject(Converter);
 
   toDecimalForm = new FormGroup({
@@ -22,6 +22,29 @@ export class App {
       [Validators.min(-3999),
       Validators.max(3999)]),
   });
+
+  public ngOnInit(): void {
+    const params = new URL(window.location.href).searchParams;
+    const numeroParam = params.get('numero');
+    const romanParam = params.get('roman');
+
+    if (numeroParam !== null) {
+      const n = Number(numeroParam);
+      if (Number.isFinite(n)) {
+        this.toRomanForm.setValue({ numero: n });
+        this.toRoman();
+      }
+      return;
+    }
+
+    if (romanParam !== null) {
+      const r = romanParam.toUpperCase();
+      if (r) {
+        this.toDecimalForm.setValue({ algarismos: r });
+        this.toDecimal();
+      }
+    }
+  }
 
   public toDecimal() {
     if (this.toDecimalForm.valid) {
