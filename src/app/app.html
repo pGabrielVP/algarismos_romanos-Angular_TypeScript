@@ -5,7 +5,7 @@
             <label for="decimal">Digite um Número Decimal:</label>
             <input type="number" formControlName="numero" placeholder="e.g. 29">
             @if (!toRomanForm.valid) {
-            <span>O valor deve estar entre -3999 e 3999.</span>
+            <span>O valor deve estar entre -3999999 e 3999999.</span>
             }
             <button class="convert-btn" (click)="toRoman()">Converter para Romano</button>
         </form>
