@@ -19,8 +19,8 @@ export class App implements OnInit {
 
   toRomanForm = new FormGroup({
     numero: new FormControl(0,
-      [Validators.min(-3999),
-      Validators.max(3999)]),
+      [Validators.min(-3999999),
+      Validators.max(3999999)]),
   });
 
   public ngOnInit(): void {
