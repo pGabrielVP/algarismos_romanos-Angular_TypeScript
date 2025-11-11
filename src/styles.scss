@@ -4,6 +4,13 @@ $cor-primaria: #F4991A;
 $cor-secundaria: #344F1F;
 $accent: #F2EAD3;
 
+:root {
+  --cor-fundo: #{$cor-fundo};
+  --cor-primaria: #{$cor-primaria};
+  --cor-secundaria: #{$cor-secundaria};
+  --accent: #{$accent};
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,11 +20,11 @@ $accent: #F2EAD3;
 html,
 body {
     font-family: 'Roboto', sans-serif;
-    background: $cor-fundo;
+    background: var(--cor-fundo);
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-size: cover;
-    color: $cor-secundaria;
+    color: var(--cor-secundaria);
 }

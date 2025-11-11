@@ -1,22 +1,12 @@
-<div class="container">
-    <h1>Conversor de Números Romanos</h1>
-    <div class="conversor">
-        <form class="convert-section" [formGroup]="toRomanForm" (submit)="toRoman()">
-            <label for="decimal">Digite um Número Decimal:</label>
-            <input type="number" formControlName="numero" placeholder="e.g. 29">
-            @if (!toRomanForm.valid) {
-            <span>O valor deve estar entre -3999999 e 3999999.</span>
-            }
-            <button class="convert-btn" (click)="toRoman()">Converter para Romano</button>
-        </form>
-
-        <form class="convert-section" [formGroup]="toDecimalForm" (submit)="toDecimal()">
-            <label for="romano">Digite um Número Romano:</label>
-            <input type="text" formControlName="algarismos" placeholder="e.g. XXIX">
-            @if (!toDecimalForm.valid) {
-            <span>O valor digitado não é válido.</span>
-            }
-            <button class="convert-btn" (click)="toDecimal()">Converter para Decimal</button>
-        </form>
+<nav class="app-nav" role="navigation" aria-label="Main">
+    <div class="nav-inner">
+        <div class="titulo">Algarismos Romanos</div>
+        <ul class="nav-links" role="menu">
+            <li><a role="menuitem" routerLink="/" class="link">Conversor</a></li>
+        </ul>
     </div>
-</div>
+</nav>
+
+<main class="app-main">
+    <router-outlet></router-outlet>
+</main>

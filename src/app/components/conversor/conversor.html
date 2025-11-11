@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Conversor de Números Romanos</h1>
+    <div class="conversor">
+        <form class="conversor-section" [formGroup]="toRomanForm" (submit)="toRoman()">
+            <label for="decimal">Digite um Número Decimal:</label>
+            <input type="number" formControlName="numero" placeholder="e.g. 29">
+            @if (!toRomanForm.valid) {
+            <span>O valor deve estar entre -3999999 e 3999999.</span>
+            }
+            <button class="conversor-btn" (click)="toRoman()">Converter para Romano</button>
+        </form>
+
+        <form class="conversor-section" [formGroup]="toDecimalForm" (submit)="toDecimal()">
+            <label for="romano">Digite um Número Romano:</label>
+            <input type="text" formControlName="algarismos" placeholder="e.g. XXIX">
+            @if (!toDecimalForm.valid) {
+            <span>O valor digitado não é válido.</span>
+            }
+            <button class="conversor-btn" (click)="toDecimal()">Converter para Decimal</button>
+        </form>
+    </div>
+</div>
