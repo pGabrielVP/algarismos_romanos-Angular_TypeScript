@@ -1,3 +1,7 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { Conversor } from './components/conversor/conversor';
+
+export const routes: Routes = [
+    { path: "", component: Conversor },
+];
